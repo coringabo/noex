@@ -1,0 +1,42 @@
+:root {
+    --bg: #f4f7f9; --card: #ffffff; --text: #2d3436;
+    --primary: #4361ee; --green: #00b894; --red: #d63031; --border: #dfe6e9;
+    --fii: #0984e3; --acao: #6c5ce7; --cripto: #f1c40f; --outros: #95a5a6;
+}
+
+* { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); padding-bottom: 100px; }
+
+.container { max-width: 500px; margin: 0 auto; padding: 20px; }
+
+/* NAVEGAÇÃO */
+.bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--card); border-top: 1px solid var(--border);
+    display: flex; justify-content: space-around; padding: 15px 0; z-index: 1000;
+}
+.nav-item { display: flex; flex-direction: column; align-items: center; color: #b2bec3; cursor: pointer; font-size: 11px; }
+.nav-item.active { color: var(--primary); font-weight: bold; }
+.nav-icon { font-size: 22px; margin-bottom: 4px; }
+
+/* CARDS */
+.card { background: var(--card); padding: 22px; border-radius: 28px; box-shadow: 0 10px 20px rgba(0,0,0,0.03); margin-bottom: 20px; }
+.gradient-card { background: linear-gradient(135deg, #4361ee, #7209b7); color: white; }
+.home-footer { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px; }
+
+.asset-card { background: var(--card); border-radius: 24px; padding: 20px; margin-bottom: 15px; border: 1px solid var(--border); }
+.category-tag { font-size: 10px; padding: 3px 8px; border-radius: 20px; color: white; font-weight: bold; text-transform: uppercase; margin-bottom: 8px; display: inline-block; }
+
+/* BOTÕES MANUAL */
+.controls { display: flex; align-items: center; justify-content: space-between; margin: 15px 0; }
+.btn-qty { width: 45px; height: 45px; border-radius: 15px; border: none; font-size: 22px; cursor: pointer; color: white; }
+.qty-num { font-size: 28px; font-weight: 800; }
+
+/* FORMULÁRIO */
+input, select { width: 100%; padding: 15px; margin: 8px 0; border: 1px solid var(--border); border-radius: 14px; font-size: 16px; }
+label { font-size: 13px; font-weight: 700; color: #636e72; }
+.btn-save { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 18px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+.btn-sync { background: rgba(255,255,255,0.2); border: none; color: white; padding: 8px 12px; border-radius: 10px; cursor: pointer; }
+
+.page { display: none; }
+.page.active { display: block; }

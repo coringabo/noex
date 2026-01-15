@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestApp Elite</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <nav class="bottom-nav">
+        <div class="nav-item active" onclick="showPage('home')" id="n-home"><span class="nav-icon">📊</span>Home</div>
+        <div class="nav-item" onclick="showPage('carteira')" id="n-carteira"><span class="nav-icon">💼</span>Carteira</div>
+        <div class="nav-item" onclick="showPage('investir')" id="n-investir"><span class="nav-icon">➕</span>Novo</div>
+    </nav>
+
+    <div class="container">
+        <div id="home" class="page active">
+            <div class="card gradient-card">
+                <small>Patrimônio Total</small>
+                <h1 id="home-total">R$ 0,00</h1>
+                <div class="home-footer">
+                    <div><small>Renda Mensal</small><h3 id="home-renda">R$ 0,00</h3></div>
+                    <button onclick="syncB3()" class="btn-sync">🔄 Atualizar B3</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Divisão por Setor</h3>
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+
+        <div id="carteira" class="page">
+            <h2>Minha Carteira</h2>
+            <div id="lista-ativos"></div>
+        </div>
+
+        <div id="investir" class="page">
+            <div class="card">
+                <h3>Adicionar Novo Ativo</h3>
+                <label>Ticker (Ex: PETR4)</label>
+                <input type="text" id="tk" placeholder="Código do ativo">
+                
+                <label>Categoria</label>
+                <select id="cat">
+                    <option value="fii">Fundo Imobiliário (FII)</option>
+                    <option value="acao">Ação</option>
+                    <option value="cripto">Criptomoeda</option>
+                    <option value="outros">Outros</option>
+                </select>
+
+                <label>Meta de Cotas</label>
+                <input type="number" id="mt" placeholder="Ex: 100">
+
+                <label>Meta em Dinheiro (R$)</label>
+                <input type="number" id="mv" placeholder="Ex: 1000.00">
+                
+                <label>Preço Pago / Atual</label>
+                <input type="number" id="pr" placeholder="R$ 0,00" step="0.01">
+
+                <label>Rendimento por Cota</label>
+                <input type="number" id="rd" placeholder="R$ 0,00" step="0.01">
+                
+                <button class="btn-save" onclick="addAtivo()">Salvar na Carteira</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
